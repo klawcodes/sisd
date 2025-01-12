@@ -20,15 +20,15 @@ class Database extends Config
     public string $defaultGroup = 'default';
 
     /**
-     * The default database connection.
+     * The default database connection. mysql-4177310-klawcodes-a7ad.k.aivencloud.com  avnadmin  AVNS_tISk9HY6HSp_0tR_uCv
      *
      * @var array<string, mixed>
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => 'dim',
-        'password'     => 'dim',
+        'hostname'     => 'mysql-4177310-klawcodes-a7ad.k.aivencloud.com',
+        'username'     => 'avnadmin',
+        'password'     => 'AVNS_tISk9HY6HSp_0tR_uCv',
         'database'     => 'sisd',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',

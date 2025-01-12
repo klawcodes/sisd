@@ -32,8 +32,8 @@
 
             <!-- Action Buttons -->
             <div class="hidden md:flex items-center space-x-4">
-                <a href="<?= base_url('login') ?>" class="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-150 ease-in-out">
-                    Login
+                <a href="<?= base_url('cekdonasi') ?>" class="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-150 ease-in-out">
+                    Cek Donasi
                 </a>
             </div>
 
@@ -55,8 +55,8 @@
             <a href="<?= base_url('program') ?>" class="text-gray-600 hover:text-purple-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Program Donasi</a>
             <a href="<?= base_url('about') ?>" class="text-gray-600 hover:text-purple-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
             <a href="<?= base_url('contact') ?>" class="text-gray-600 hover:text-purple-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
-            <a href="<?= base_url('login') ?>" class="w-full bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-700 mt-4 text-center block">
-                Login
+            <a href="<?= base_url('cekdonasi') ?>" class="w-full bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-700 mt-4 text-center block">
+                Cek Donasi
             </a>
         </div>
     </div>
@@ -68,3 +68,16 @@ function toggleMobileMenu() {
     mobileMenu.classList.toggle('hidden');
 }
 </script>
+<?php if (session()->getFlashdata('swal_icon')): ?>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    Swal.fire({
+        icon: '<?= session()->getFlashdata('swal_icon') ?>',
+        title: '<?= session()->getFlashdata('swal_title') ?>',
+        text: '<?= session()->getFlashdata('swal_text') ?>',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#3085d6'
+    });
+});
+</script>
+<?php endif; ?>

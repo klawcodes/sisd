@@ -13,8 +13,8 @@ $routes->get('/about', 'About::index');
 // Home Barang
 $routes->get('/contact', 'Contact::index');
 
-$routes->get('/login', 'Login::index');
-$routes->post('/login', 'Login::index');
-$routes->get('/member', 'Member::index');
-$routes->post('/member', 'Member::index');
-$routes->post('/login/logout', 'Login::logout');  // Tambahkan ini
+$routes->get('/donate', 'Donate::index');
+$routes->post('/donate/add', 'Donate::add');
+$routes->get('notification', 'MessageController::showSweetAlertMessages');
+
+$routes->get('/cek', 'cekDonasi::index');
