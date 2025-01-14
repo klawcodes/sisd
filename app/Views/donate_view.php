@@ -58,14 +58,6 @@
                     </div>
                 </div>
 
-                <!-- Upload Bukti Transfer -->
-                <div>
-                    <label for="bukti_transfer" class="block text-sm font-medium text-gray-700">Upload Bukti
-                        Transfer</label>
-                    <input type="file" id="bukti_transfer" name="bukti_transfer" required
-                        class="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                </div>
-
                 <!-- Tombol Submit -->
                 <div>
                     <button type="submit"

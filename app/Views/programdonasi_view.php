@@ -18,8 +18,7 @@
     <?php if (!empty($programs)): ?>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
             <?php foreach ($programs as $program): ?>
-                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-                    <img src="/api/placeholder/400/200" alt="<?= esc($program['nama_program']) ?>" class="w-full h-48 object-cover">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="p-6">
                         <h3 class="font-bold text-xl mb-2"><?= esc($program['nama_program']) ?></h3>
                         <p class="text-gray-600 mb-4"><?= esc($program['deskripsi']) ?></p>

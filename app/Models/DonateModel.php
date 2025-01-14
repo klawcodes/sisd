@@ -34,4 +34,16 @@ class DonateModel extends Model
     {
         return $this->where('status', 1)->countAllResults();
     }
+    public function getDonasiPaginated($page = 1)
+{
+    $limit = 5; // jumlah data per halaman
+    $offset = ($page - 1) * $limit;
+    
+    return $this->select('tb_donatur.*, tb_program.nama_program')
+        ->join('tb_program', 'tb_program.id_program = tb_donatur.id_program')
+        ->orderBy('tgl_donasi', 'DESC')
+        ->limit($limit, $offset)
+        ->get()
+        ->getResultArray();
+}
 }

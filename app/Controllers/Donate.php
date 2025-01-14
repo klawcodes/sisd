@@ -20,15 +20,6 @@ class Donate extends Controller
         // Generate nomor donasi
         $no_donasi = '3555' . str_pad(rand(1, 99999), 5, '0', STR_PAD_LEFT);
 
-        // Proses file upload
-        $file = $this->request->getFile('bukti_transfer');
-        if ($file && $file->isValid() && !$file->hasMoved()) {
-            $newName = $file->getRandomName(); // Generate nama file unik
-            $file->move(WRITEPATH . 'uploads', $newName); // Simpan file ke folder uploads
-            $bukti_transfer = $newName;
-        } else {
-            $bukti_transfer = null;
-        }
 
         // Data untuk disimpan
         $data = [
@@ -37,7 +28,6 @@ class Donate extends Controller
             'tgl_donasi' => date('Y-m-d'),
             'id_program' => $this->request->getPost('program'),
             'jmlh_nominal' => $this->request->getPost('nominal'),
-            'bukti_transfer' => $bukti_transfer,
             'status' => 0
         ];
 
