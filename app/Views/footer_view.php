@@ -3,17 +3,14 @@
 
 <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-800 sm:text-center dark:text-gray-800">© 2025 Kelompok Mawar. All Rights Reserved.
+      <span class="text-sm text-gray-800 sm:text-center dark:text-gray-800">© 2025 <a class="hover:no-underline hover:text-purple-800" href="<?= base_url('greatestofalltime') ?>">Kelompok Mawar</a>. All Rights Reserved.
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-800 dark:text-black sm:mt-0">
         <li>
-            <a href="<?= base_url('program') ?>" class="hover:underline hover:text-purple-800 me-4 md:me-6">Program Donasi</a>
+            <a href="<?= base_url('program') ?>" class="hover:no-underline hover:text-purple-800 me-4 md:me-6">Program Donasi</a>
         </li>
         <li>
-            <a href="<?= base_url(relativePath: 'about') ?>" class="hover:underline hover:text-purple-800 me-4 md:me-6">Tentang Kami</a>
-        </li>
-        <li>
-            <a href="<?= base_url(relativePath: 'contact') ?>" class="hover:underline hover:text-purple-800">Kontak</a>
+            <a href="<?= base_url(relativePath: 'about') ?>" class="hover:no-underline hover:text-purple-800 me-4 md:me-6">Tentang Kami</a>
         </li>
     </ul>
     </div>

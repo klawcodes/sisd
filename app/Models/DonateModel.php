@@ -20,16 +20,18 @@ class DonateModel extends Model
         $builder->where('status', 1);
         return $builder->get()->getResult();
     }
-    public function cekDonasi($no_donasi)
+    // DonateModel.php
+    public function searchDonasi($searchTerm)
     {
-        // Tambahkan debugging untuk melihat query yang dijalankan
-        $query = $this->db->table($this->table)
-            ->select('tb_donasi.*, tb_program.nm_program')
-            ->join('tb_program', 'tb_program.id_program = tb_donasi.id_program')
-            ->where('no_donasi', $no_donasi);
-
-        log_message('debug', 'SQL Query: ' . $query->getCompiledSelect());
-
-        return $query->get()->getRow();
+        return $this->table('tb_donatur')
+            ->select('tb_donatur.*, tb_program.nama_program')
+            ->join('tb_program', 'tb_program.id_program = tb_donatur.id_program')
+            ->like('no_donasi', $searchTerm)
+            ->get()
+            ->getResultArray();
+    }
+    public function getTotalDonatur()
+    {
+        return $this->where('status', 1)->countAllResults();
     }
 }

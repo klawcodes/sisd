@@ -19,61 +19,73 @@
                 <h2 class="text-2xl font-bold text-center text-gray-800 mb-5">Form Donasi RT 003</h2>
             </div>
 
-            <a href="<?= base_url('/') ?>" class="hover:underline"><- Kembali</a>
+            <div class="flex justify-between items-center mb-6">
+                <a href="<?= base_url('/') ?>" class="hover:underline"><- Kembali</a>
+                        <a href="<?= base_url('cek') ?>" class="hover:underline">Cek Donasi -></a>
+            </div>
 
-                    <form action="<?= base_url('donate/add') ?>" method="POST" class="space-y-6">
-                        <?= csrf_field() ?>
+            <form action="<?= base_url('donate/add') ?>" method="POST" enctype="multipart/form-data" class="space-y-6">
+                <?= csrf_field() ?>
 
-                        <!-- Nama -->
-                        <div>
-                            <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
-                            <input type="text" id="nama" name="nama" required
-                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                <!-- Nama -->
+                <div>
+                    <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" required
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+
+                <!-- Program Donasi -->
+                <div>
+                    <label for="program" class="block text-sm font-medium text-gray-700">Program Donasi</label>
+                    <select id="program" name="program" required
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">Pilih program donasi</option>
+                        <?php foreach ($programs as $program): ?>
+                            <option value="<?= $program->id_program ?>"><?= $program->nama_program ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <!-- Nominal -->
+                <div>
+                    <label for="nominal" class="block text-sm font-medium text-gray-700">Nominal</label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="text-gray-500 sm:text-sm">Rp</span>
                         </div>
+                        <input type="number" id="nominal" name="nominal" required
+                            class="block w-full pl-12 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                </div>
 
-                        <!-- Program Donasi -->
-                        <div>
-                            <label for="program" class="block text-sm font-medium text-gray-700">Program Donasi</label>
-                            <select id="program" name="program" required
-                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                                <option value="">Pilih program donasi</option>
-                                <?php foreach ($programs as $program): ?>
-                                    <option value="<?= $program->id_program ?>"><?= $program->nama_program ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
+                <!-- Upload Bukti Transfer -->
+                <div>
+                    <label for="bukti_transfer" class="block text-sm font-medium text-gray-700">Upload Bukti
+                        Transfer</label>
+                    <input type="file" id="bukti_transfer" name="bukti_transfer" required
+                        class="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
 
-                        <!-- Nominal -->
-                        <div>
-                            <label for="nominal" class="block text-sm font-medium text-gray-700">Nominal</label>
-                            <div class="mt-1 relative rounded-md shadow-sm">
-                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <span class="text-gray-500 sm:text-sm">Rp</span>
-                                </div>
-                                <input type="number" id="nominal" name="nominal" required
-                                    class="block w-full pl-12 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                            </div>
-                        </div>
+                <!-- Tombol Submit -->
+                <div>
+                    <button type="submit"
+                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                        Kirim Donasi
+                    </button>
+                </div>
+            </form>
 
-                        <!-- Tombol Submit -->
-                        <div>
-                            <button type="submit"
-                                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
-                                Kirim Donasi
-                            </button>
-                        </div>
-                    </form>
         </div>
     </div>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
 
-<?php if(session()->has('swal_icon')): ?>
-<script>
-    Swal.fire({
-        icon: '<?= session()->getFlashdata('swal_icon') ?>',
-        title: '<?= session()->getFlashdata('swal_title') ?>',
-        html: '<?= session()->getFlashdata('swal_text') ?>',
-    });
-</script>
-<?php endif; ?>
+    <?php if (session()->has('swal_icon')): ?>
+        <script>
+            Swal.fire({
+                icon: '<?= session()->getFlashdata('swal_icon') ?>',
+                title: '<?= session()->getFlashdata('swal_title') ?>',
+                html: '<?= session()->getFlashdata('swal_text') ?>',
+            });
+        </script>
+    <?php endif; ?>
 </body>

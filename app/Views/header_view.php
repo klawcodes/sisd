@@ -19,20 +19,19 @@
                 <svg class="h-8 w-8 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
-                <span class="text-gray-800 font-bold text-xl">DonasiKita</span>
+                <span class="text-gray-800 font-bold text-xl"><a class="hover:no-underline hover:text-purple-600" href="<?= base_url('/') ?>">DonasiKita</a></span>
             </div>
 
             <!-- Navigation Links - Desktop -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="<?= base_url('/') ?>" class="text-gray-600 hover:text-purple-600 px-3 py-2 text-sm font-medium">Beranda</a>
-                <a href="<?= base_url('program') ?>" class="text-gray-600 hover:text-purple-600 px-3 py-2 text-sm font-medium">Program Donasi</a>
-                <a href="<?= base_url('about') ?>" class="text-gray-600 hover:text-purple-600 px-3 py-2 text-sm font-medium">Tentang Kami</a>
-                <a href="<?= base_url('contact') ?>" class="text-gray-600 hover:text-purple-600 px-3 py-2 text-sm font-medium">Kontak</a>
+                <a href="<?= base_url('/') ?>" class="hover:no-underline text-gray-600 hover:text-purple-600 px-3 py-2 text-sm font-medium">Beranda</a>
+                <a href="<?= base_url('program') ?>" class="hover:no-underline text-gray-600 hover:text-purple-600 px-3 py-2 text-sm font-medium">Program Donasi</a>
+                <a href="<?= base_url('about') ?>" class="hover:no-underline text-gray-600 hover:text-purple-600 px-3 py-2 text-sm font-medium">Tentang Kami</a>
             </div>
 
             <!-- Action Buttons -->
             <div class="hidden md:flex items-center space-x-4">
-                <a href="<?= base_url('cekdonasi') ?>" class="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-150 ease-in-out">
+                <a href="<?= base_url('cek') ?>" class="hover:no-underline bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-150 ease-in-out">
                     Cek Donasi
                 </a>
             </div>
@@ -55,7 +54,7 @@
             <a href="<?= base_url('program') ?>" class="text-gray-600 hover:text-purple-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Program Donasi</a>
             <a href="<?= base_url('about') ?>" class="text-gray-600 hover:text-purple-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
             <a href="<?= base_url('contact') ?>" class="text-gray-600 hover:text-purple-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
-            <a href="<?= base_url('cekdonasi') ?>" class="w-full bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-700 mt-4 text-center block">
+            <a href="<?= base_url('cek') ?>" class="w-full bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-700 mt-4 text-center block">
                 Cek Donasi
             </a>
         </div>
