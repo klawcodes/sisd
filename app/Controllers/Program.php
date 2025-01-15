@@ -6,15 +6,18 @@ use App\Models\ProgramModel;
 
 class Program extends BaseController
 {
+    // Di Program.php controller
     public function index()
     {
         $programModel = new ProgramModel();
-
         // Ambil program yang aktif
-        $programs = $programModel->getActivePrograms();
+        $data = [
+            'programs' => $programModel->getActivePrograms(),
+            'completed_programs' => $programModel->getCompletedPrograms()
+        ];
 
         echo view('header_view');
-        echo view('programdonasi_view', ['programs' => $programs]);
+        echo view('programdonasi_view', $data);
         echo view('footer_view');
     }
 }

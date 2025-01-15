@@ -12,14 +12,14 @@ class ProgramModel extends Model
     public function getActivePrograms()
     {
         return $this->where('status', 1)
-                    ->findAll();
+            ->findAll();
     }
 
     public function getTotalDonasi()
     {
         $result = $this->selectSum('terkumpul')
-                      ->get()
-                      ->getRow();
+            ->get()
+            ->getRow();
         return $result->terkumpul ?? 0;
     }
 
@@ -28,5 +28,12 @@ class ProgramModel extends Model
         return $this->where('status', 1)->countAllResults();
     }
 
-    
+    // Di ProgramModel.php, tambahkan method ini
+    public function getCompletedPrograms()
+    {
+        return $this->where('status', 0)
+            ->findAll();
+    }
+
+
 }
