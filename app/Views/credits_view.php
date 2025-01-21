@@ -9,8 +9,8 @@
 <body class="bg-white min-h-screen">
     <div class="container mx-auto px-4 py-16">
         <div class="text-center mb-16">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">The Greatest Team on STMIK Pranata Indonesia</h1>
-            <p class="text-gray-600 text-lg">Introduce "Kelompok Mawar" dari RT.003</p>
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">🌹 Kelompok Mawar 🌹</h1>
+            <p class="text-gray-600 text-lg">Perkenalkan "Kelompok Mawar" dari RT. 03</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">

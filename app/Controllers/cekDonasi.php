@@ -22,8 +22,8 @@ class CekDonasi extends BaseController
                 'current_page' => $page
             ]
         ];
-        
-        return view('cekdonasi_view', $data);
+        echo view('header_view');
+        echo view('cekdonasi_view', $data);
     }
 
     public function search()

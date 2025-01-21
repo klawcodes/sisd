@@ -7,7 +7,7 @@ class ProgramModel extends Model
 {
     protected $table = 'tb_program';
     protected $primaryKey = 'id_program';
-    protected $allowedFields = ['nama_program', 'deskripsi', 'terkumpul', 'target', 'status'];
+    protected $allowedFields = ['nama_program', 'deskripsi', 'terkumpul', 'target', 'status', 'tgl_mulai', 'tgl_selesai'];
 
     public function getActivePrograms()
     {

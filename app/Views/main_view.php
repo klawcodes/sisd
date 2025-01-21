@@ -25,10 +25,10 @@
 
     <!-- Statistik -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-        <div class="bg-white p-6 rounded-lg shadow-sm text-center">
-            <h3 class="text-3xl font-bold text-purple-600 mb-2">
-                <?php
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                <h3 class="text-3xl font-bold text-purple-600 mb-2">
+                    <?php
                     $totalDonasi = $statistics['total_donasi'];
                     if ($totalDonasi >= 1000000000) {
                         echo 'Rp ' . number_format($totalDonasi / 1000000000, 1, ',', '.') . 'M+';
@@ -75,9 +75,17 @@
                                 ?>
                                 <div class="bg-purple-600 h-2.5 rounded-full" style="width: <?= $percentage ?>%"></div>
                             </div>
-                            <div class="flex justify-between text-sm text-gray-600 mt-2">
-                                <span>Terkumpul: Rp<?= number_format($program['terkumpul'], 0, ',', '.') ?></span>
-                                <span>Target: Rp<?= number_format($program['target'], 0, ',', '.') ?></span>
+                            <div class="flex flex-col gap-2 text-sm text-gray-600 mt-2">
+                                <div class="flex justify-between">
+                                    <span>Terkumpul: Rp<?= number_format($program['terkumpul'], 0, ',', '.') ?></span>
+                                    <span>Target: Rp<?= number_format($program['target'], 0, ',', '.') ?></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Mulai:
+                                        <?= ($program['tgl_mulai'] && $program['tgl_mulai'] != '0000-00-00') ? date('d/m/Y', strtotime($program['tgl_mulai'])) : '-' ?></span>
+                                    <span>Selesai:
+                                        <?= ($program['tgl_selesai'] && $program['tgl_selesai'] != '0000-00-00') ? date('d/m/Y', strtotime($program['tgl_selesai'])) : '-' ?></span>
+                                </div>
                             </div>
                         </div>
                         <a href="<?= base_url('donate') ?>"
@@ -97,30 +105,34 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
             <!-- Item 1 -->
             <div class="text-center">
-                <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                <div
+                    class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
                     1
                 </div>
                 <h3 class="font-bold mb-2">Pilih Program</h3>
                 <p class="text-gray-600">Pilih program donasi yang ingin Anda bantu</p>
             </div>
-            
+
             <!-- Item 2 -->
             <div class="text-center">
-                <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                <div
+                    class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
                     2
                 </div>
                 <h3 class="font-bold mb-2">Isi Nominal</h3>
                 <p class="text-gray-600">Tentukan jumlah donasi yang akan diberikan</p>
             </div>
-            
+
             <!-- Item 3 -->
             <div class="text-center">
-                <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                <div
+                    class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
                     3
                 </div>
                 <h3 class="font-bold mb-2">Konfirmasi</h3>
-                <p class="text-gray-600">Donasi Anda akan diproses dan dikonfirmasi dan bisa di cek di <br/> 
-                    <a class="underline hover:no-underline hover:text-purple-600" href="<?= base_url('cek') ?>">Cek Donasi</a>
+                <p class="text-gray-600">Donasi Anda akan diproses dan dikonfirmasi dan bisa di cek di <br />
+                    <a class="underline hover:no-underline hover:text-purple-600" href="<?= base_url('cek') ?>">Cek
+                        Donasi</a>
                 </p>
             </div>
         </div>

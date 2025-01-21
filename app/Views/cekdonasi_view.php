@@ -7,8 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-white min-h-screen py-10 ">
+<body class="bg-white min-h-screen ">
     <!-- Container untuk centering -->
+    
     <div class="container mx-auto px-4 max-w-6xl ">
         <div class="bg-white rounded-lg drop-shadow-2xl">
             <div class="p-4 border-b border-gray-200 items-center justify-center flex flex-col">
@@ -21,9 +22,14 @@
                         </svg>
                         <span class="text-gray-800 font-bold text-xl">DonasiKita</span>
                     </div>
-                    <h2 class="text-2xl font-bold text-center text-gray-800 mb-5">Cek Donasi</h2>
+                    <h2 class="text-4xl font-bold text-center text-gray-800 mb-5">Cek Donasi</h2>
+                    <a href="<?= base_url('/') ?>" class="flex items-center text-xs gap-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 hover:no-underline transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        <span>Kembali</span>
+    </a>
                 </div>
-                <a href="<?= base_url('/') ?>" class="hover:underline">Kembali</a>
 
                 <!-- Search Bar -->
                 <div class="mt-4">
