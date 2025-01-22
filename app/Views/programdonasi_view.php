@@ -11,8 +11,8 @@
 <body class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">
         <!-- Program Aktif Section -->
-        <h1 class="text-[50px] font-bold mb-4">Program Sumbangan & Donasi Terkini</h1>
-        <p class="text-gray-700 mb-8">
+        <h1 class="text-[50px] font-bold mb-4" data-aos="fade-up" data-aos-delay="100">Program Sumbangan & Donasi Terkini</h1>
+        <p class="text-gray-700 mb-8" data-aos="fade-up" data-aos-delay="200">
             Temukan berbagai program donasi terkini yang dapat Anda dukung. Bersama kita bisa membantu lebih banyak
             orang
             yang membutuhkan.<br /> Pilih program yang sesuai dengan hati Anda dan mulai berdonasi sekarang.
@@ -21,7 +21,7 @@
         <?php if (!empty($programs)): ?>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
                 <?php foreach ($programs as $program): ?>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-2"><?= esc($program['nama_program']) ?></h3>
                             <p class="text-gray-600 mb-4"><?= esc($program['deskripsi']) ?></p>
@@ -54,15 +54,15 @@
                 <?php endforeach; ?>
             </div>
         <?php else: ?>
-            <p class="text-gray-700">Belum ada program donasi yang aktif saat ini.</p>
+            <p class="text-gray-700" data-aos="fade-up" data-aos-delay="300">Belum ada program donasi yang aktif saat ini.</p>
         <?php endif; ?>
 
         <!-- Program Selesai Section -->
         <?php if (!empty($completed_programs)): ?>
-            <h2 class="text-3xl font-bold mb-4 mt-12">Program Donasi Yang Telah Selesai</h2>
+            <h2 class="text-3xl font-bold mb-4 mt-12" data-aos="fade-up" data-aos-delay="400">Program Donasi Yang Telah Selesai</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
                 <?php foreach ($completed_programs as $program): ?>
-                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                         <div class="p-6">
                             <div class="flex justify-between items-center mb-2">
                                 <h3 class="font-bold text-xl"><?= esc($program['nama_program']) ?></h3>

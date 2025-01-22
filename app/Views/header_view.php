@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -53,7 +55,6 @@
             <a href="<?= base_url('/') ?>" class="text-gray-600 hover:text-purple-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
             <a href="<?= base_url('program') ?>" class="text-gray-600 hover:text-purple-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Program Donasi</a>
             <a href="<?= base_url('about') ?>" class="text-gray-600 hover:text-purple-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
-            <a href="<?= base_url('contact') ?>" class="text-gray-600 hover:text-purple-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
             <a href="<?= base_url('cek') ?>" class="w-full bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-700 mt-4 text-center block">
                 Cek Donasi
             </a>

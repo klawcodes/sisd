@@ -13,9 +13,9 @@
         <!-- Content with max-width container -->
         <div class="relative z-10 w-full">
             <div class="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-                <h1 class="text-4xl font-bold text-gray-900 mb-4">Sistem Informasi Sumbangan dan Donasi RT. 003</h1>
-                <p class="text-xl text-gray-600 mb-8">Desa Sukangoding, Kecamatan Ciganea, Kelurahan Los Angeles</p>
-                <a href="<?= base_url('donate') ?>"
+                <h1 class="text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">Sistem Informasi Sumbangan dan Donasi RT. 003</h1>
+                <p class="text-xl text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="100">Desa Sukangoding, Kecamatan Ciganea, Kelurahan Los Angeles</p>
+                <a href="<?= base_url('donate') ?>" data-aos="fade-up" data-aos-delay="200"
                     class="hover:no-underline inline-block bg-purple-600 text-white px-8 py-3 rounded-full font-medium hover:bg-purple-700 transition duration-150 ease-in-out">
                     Donasi Sekarang
                 </a>
@@ -26,7 +26,7 @@
     <!-- Statistik -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="300">
                 <h3 class="text-3xl font-bold text-purple-600 mb-2">
                     <?php
                     $totalDonasi = $statistics['total_donasi'];
@@ -41,13 +41,13 @@
                 </h3>
                 <p class="text-gray-600">Total Donasi Terkumpul</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="400">
                 <h3 class="text-3xl font-bold text-purple-600 mb-2">
                     <?= number_format($statistics['total_donatur'], 0, ',', '.') ?>
                 </h3>
                 <p class="text-gray-600">Donatur Bergabung</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="500">
                 <h3 class="text-3xl font-bold text-purple-600 mb-2">
                     <?= $statistics['total_program'] ?>
                 </h3>
@@ -60,8 +60,8 @@
 <!-- Program Donasi Terkini -->
 <section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Program Donasi dan Sumbangan Terkini</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center" data-aos="fade-up" data-aos-delay="100">Program Donasi dan Sumbangan Terkini</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
             <?php foreach ($programs as $program): ?>
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="p-6">
@@ -101,10 +101,10 @@
 <!-- Cara Berdonasi -->
 <section class="bg-purple-50 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Cara Berdonasi</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center" data-aos="fade-up" data-aos-delay="100">Cara Berdonasi</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
             <!-- Item 1 -->
-            <div class="text-center">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
                 <div
                     class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
                     1
@@ -114,7 +114,7 @@
             </div>
 
             <!-- Item 2 -->
-            <div class="text-center">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="300">
                 <div
                     class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
                     2
@@ -124,7 +124,7 @@
             </div>
 
             <!-- Item 3 -->
-            <div class="text-center">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
                 <div
                     class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
                     3

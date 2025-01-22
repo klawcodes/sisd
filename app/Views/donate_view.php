@@ -1,6 +1,8 @@
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Donasi</title>
 </head>
 
@@ -14,9 +16,9 @@
                         <path
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
-                    <span class="text-gray-800 font-bold text-xl">DonasiKita</span>
+                    <span class="text-gray-800 font-bold text-xl" data-aos="fade-up" data-aos-delay="100">DonasiKita</span>
                 </div>
-                <h2 class="text-2xl font-bold text-center text-gray-800 mb-5">Form Donasi RT 003</h2>
+                <h2 class="text-2xl font-bold text-center text-gray-800 mb-5" data-aos="fade-up" data-aos-delay="200">Form Donasi RT 003</h2>
             </div>
 
             <div class="flex justify-between items-center mb-6">
@@ -28,14 +30,14 @@
                 <?= csrf_field() ?>
 
                 <!-- Nama -->
-                <div>
+                <div data-aos="fade-up" data-aos-delay="300">
                     <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
                     <input type="text" id="nama" name="nama" required
                         class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                 </div>
 
                 <!-- Program Donasi -->
-                <div>
+                <div data-aos="fade-up" data-aos-delay="400">
                     <label for="program" class="block text-sm font-medium text-gray-700">Program Donasi</label>
                     <select id="program" name="program" required
                         class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
@@ -47,7 +49,7 @@
                 </div>
 
                 <!-- Nominal -->
-                <div>
+                <div data-aos="fade-up" data-aos-delay="500">
                     <label for="nominal" class="block text-sm font-medium text-gray-700">Nominal</label>
                     <div class="mt-1 relative rounded-md shadow-sm">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -59,7 +61,7 @@
                 </div>
 
                 <!-- Tombol Submit -->
-                <div>
+                <div data-aos="fade-up" data-aos-delay="600">
                     <button type="submit"
                         class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                         Kirim Donasi
@@ -70,6 +72,9 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
+    <script>
+  AOS.init();
+</script>
 
     <?php if (session()->has('swal_icon')): ?>
         <script>
